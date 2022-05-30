@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CatsComponent } from './cats/cats.component';
 import { CatCardComponent } from './cat-card/cat-card.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CatsComponent,
-    CatCardComponent
+    CatCardComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
