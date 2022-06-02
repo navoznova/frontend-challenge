@@ -1,10 +1,20 @@
-<p>cats works!</p>
-<app-cat-card></app-cat-card>
-
 <div>List of cats img</div>
-<div *ngFor="let friend of friends">
-    <img 
-        [src]="friend.url" 
-        alt="{{friend.id}}" 
-        class="">
+<div class="row">
+    <div *ngFor="let image of catsImages">
+        <img 
+            [src]="image.url" 
+            alt="{{image.id}}" 
+            class="image"
+            (click)="addToFavourites($event)">
+    </div>
+</div>
+
+<div>List of favorite cats img</div>
+<div class="row">
+    <div *ngFor="let image of catsImagesFavourite">
+        <img 
+            [src]="image.url" 
+            alt="{{image.id}}" 
+            (click)="deleteFromFavourites($event)">
+    </div>
 </div>
