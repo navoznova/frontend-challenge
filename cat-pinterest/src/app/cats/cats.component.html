@@ -6,6 +6,8 @@
             alt="{{image.id}}" 
             class="image"
             (click)="addToFavourites($event)">
+        <div class="like"
+            (click)="addToFavourites($event)"></div>
     </div>
 </div>
 
@@ -14,7 +16,9 @@
     <div *ngFor="let image of catsImagesFavourite">
         <img 
             [src]="image.url" 
-            alt="{{image.id}}" 
+            alt="{{image.id}}"
+            class="image" 
             (click)="deleteFromFavourites($event)">
+            <button class="add">Add</button>
     </div>
 </div>
