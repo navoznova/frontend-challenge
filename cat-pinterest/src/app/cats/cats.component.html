@@ -1,11 +1,12 @@
 <div>List of cats img</div>
 <div class="row">
-    <div *ngFor="let image of catsImages">
+    <div *ngFor="let image of catsImages" class="container">
         <img 
             [src]="image.url" 
             alt="{{image.id}}" 
             class="image"
             (click)="addToFavourites($event)">
+
         <div class="like"
             (click)="addToFavourites($event)"></div>
     </div>
@@ -19,6 +20,8 @@
             alt="{{image.id}}"
             class="image" 
             (click)="deleteFromFavourites($event)">
-            <button class="add">Add</button>
+
+        <div class="unlike"
+            (click)="deleteFromFavourites($event)"></div>
     </div>
 </div>
