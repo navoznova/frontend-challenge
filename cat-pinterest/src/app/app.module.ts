@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { CatsComponent } from './cats/cats.component';
 import { CatCardComponent } from './cat-card/cat-card.component';
 import { HeaderComponent } from './header/header.component';
+import { LikeComponent } from './like/like.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
     CatsComponent,
     CatCardComponent,
     HeaderComponent,
+    LikeComponent,
   ],
   imports: [
     BrowserModule,

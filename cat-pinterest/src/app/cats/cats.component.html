@@ -4,15 +4,14 @@
         <img 
             [src]="image.url" 
             alt="{{image.id}}" 
-            class="image"
-            (click)="addToFavourites($event)">
-
-        <div class="like"
-            (click)="addToFavourites($event)"></div>
+            class="image">
+        <app-like [imageUrl]="image.url" [imageId]="image.id"></app-like>
     </div>
 </div>
 
-<div>List of favorite cats img</div>
+
+
+<!-- <div>List of favorite cats img</div>
 <div class="row">
     <div *ngFor="let image of catsImagesFavourite">
         <img 
@@ -20,8 +19,5 @@
             alt="{{image.id}}"
             class="image" 
             (click)="deleteFromFavourites($event)">
-
-        <div class="unlike"
-            (click)="deleteFromFavourites($event)"></div>
     </div>
-</div>
+</div> -->

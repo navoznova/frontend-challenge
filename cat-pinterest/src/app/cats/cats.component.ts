@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Image } from './image.model';
 
 @Component({
   selector: 'app-cats',
@@ -8,7 +9,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CatsComponent implements OnInit {
   catsImages: Image[] = [];
-  catsImagesFavourite: Image [] = [];
 
   constructor(private httpClient: HttpClient) { 
   }
@@ -23,20 +23,4 @@ export class CatsComponent implements OnInit {
         this.catsImages = response;
       });
   }
-
-  addToFavourites(event: any){
-    let favouriteImgUrl = (<HTMLInputElement>event.target).src;
-    let favouriteImgId = (<HTMLInputElement>event.target).alt;
-    let favouriteImg = new Image(favouriteImgId, favouriteImgUrl);
-    
-    this.catsImagesFavourite.push(favouriteImg);
-
-  }
-
-  deleteFromFavourites(event: any){
-  }
-}
-
-export class Image {
-  constructor(public id: string, public url: string) {}
 }
