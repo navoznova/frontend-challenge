@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ImagesProvider } from 'src/services/imagesProvider';
 import { CatsListComponent } from './cats-list/cats-list.component';
 import { ImageComponent } from './image/image.component';
 import { HeaderComponent } from './header/header.component';
@@ -20,9 +21,11 @@ import { LikeComponent } from './like/like.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    ImagesProvider,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,26 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Image } from './image.model';
+import { ImagesProvider } from 'src/services/imagesProvider';
 
 @Component({
-  selector: 'app-cats',
-  templateUrl: './cats-list.component.html',
-  styleUrls: ['./cats-list.component.scss']
+	selector: 'app-cats',
+	templateUrl: './cats-list.component.html',
+	styleUrls: ['./cats-list.component.scss']
 })
 export class CatsListComponent implements OnInit {
-  catsImages: Image[] = [];
+	catsImages: Image[] = [];
 
-  constructor(private httpClient: HttpClient) { 
-  }
+	constructor(private imagesPrivoder: ImagesProvider) {
+	}
 
-  ngOnInit(): void {      
-    this.getImages();
-  }
+	ngOnInit(): void {
+		this.initImages();
+	}
 
-  getImages(){
-    this.httpClient.get<any>('https://api.thecatapi.com/v1/images/search?limit=5&page=10&order=Desc').subscribe(
-      response => {
-        this.catsImages = response;
-      });
-  }
+	initImages(): void {
+		const pageIndex = 0;
+		const pageSize = 10;
+		this.imagesPrivoder.getImages(pageIndex, pageSize)
+			.subscribe(
+				response => {
+					this.catsImages = response;
+				});
+	}
 }

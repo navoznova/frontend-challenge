@@ -1,3 +1,3 @@
 export class Image {
-    constructor(public id: string, public url: string) {}
-  }
+  constructor(public id: string, public url: string) { }
+}
