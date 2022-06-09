@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Image } from '../cats/image.model';
+import { Image } from '../cats-list/image.model';
 
 @Component({
   selector: 'app-like',
@@ -12,7 +12,6 @@ export class LikeComponent implements OnInit {
   imageStatus: string = 'unlike';
 
   catsFavouriteImages: Image[] = [];
-
 
   constructor() { }
 

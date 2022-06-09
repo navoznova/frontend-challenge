@@ -4,10 +4,10 @@ import { Image } from './image.model';
 
 @Component({
   selector: 'app-cats',
-  templateUrl: './cats.component.html',
-  styleUrls: ['./cats.component.scss']
+  templateUrl: './cats-list.component.html',
+  styleUrls: ['./cats-list.component.scss']
 })
-export class CatsComponent implements OnInit {
+export class CatsListComponent implements OnInit {
   catsImages: Image[] = [];
 
   constructor(private httpClient: HttpClient) { 
