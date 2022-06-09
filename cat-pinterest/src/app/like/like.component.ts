@@ -19,11 +19,7 @@ export class LikeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addToFavourites(url: string, id: string){
-    this.imageUrl = url;
-    this.imageId = id;
-    this.imageStatus = 'like'
-
+  addToFavourites(){
     let favouriteImg = new Image(this.imageUrl, this.imageId);
     this.catsFavouriteImages.push(favouriteImg);
 
