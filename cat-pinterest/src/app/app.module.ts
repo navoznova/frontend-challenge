@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ImagesProvider } from 'src/services/imagesProvider';
+import { LocalStorageFavoriteImagesProvider } from 'src/services/favoriteImagesProvider';
 import { CatsListComponent } from './cats-list/cats-list.component';
 import { ImageComponent } from './image/image.component';
 import { HeaderComponent } from './header/header.component';
@@ -25,6 +26,7 @@ import { LikeComponent } from './like/like.component';
   ],
   providers: [
     ImagesProvider,
+    LocalStorageFavoriteImagesProvider,
   ],
   bootstrap: [AppComponent]
 })

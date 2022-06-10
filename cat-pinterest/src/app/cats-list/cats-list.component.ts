@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Image } from './image.model';
+import { Image } from '../../models/image.model';
 import { ImagesProvider } from 'src/services/imagesProvider';
+import { LocalStorageFavoriteImagesProvider } from 'src/services/favoriteImagesProvider';
 
 @Component({
 	selector: 'app-cats',
@@ -10,8 +10,11 @@ import { ImagesProvider } from 'src/services/imagesProvider';
 })
 export class CatsListComponent implements OnInit {
 	catsImages: Image[] = [];
+	favoriteImageIds: string[] = [];
 
-	constructor(private imagesPrivoder: ImagesProvider) {
+	constructor(
+		private imagesProvider: ImagesProvider, 
+		private favoriteImagesProvider: LocalStorageFavoriteImagesProvider) {
 	}
 
 	ngOnInit(): void {
@@ -21,10 +24,16 @@ export class CatsListComponent implements OnInit {
 	initImages(): void {
 		const pageIndex = 0;
 		const pageSize = 10;
-		this.imagesPrivoder.getImages(pageIndex, pageSize)
+
+		this.imagesProvider.getImages(pageIndex, pageSize)
 			.subscribe(
 				response => {
 					this.catsImages = response;
 				});
+		this.favoriteImageIds = this.favoriteImagesProvider.get();
+	}
+
+	checkIsLiked(imageId:string): boolean{
+		return this.favoriteImageIds.includes(imageId);
 	}
 }
