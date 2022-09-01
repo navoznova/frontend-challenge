@@ -9,13 +9,14 @@ export class LocalStorageFavoriteImagesProvider {
         // throw new Error("Method not implemented.");
     }
 
-    add(imageId: string) {
-        // localStorage.setItem(this.imageId, t his.imageUrl);
-        let favoriteImageIds = localStorage.getItem("favoriteImageIds") || [];
+    add(imageId: string, imageUrl: string) {
+        localStorage.setItem(imageId, imageUrl);
+
+        /*let favoriteImageIds = localStorage.getItem("favoriteImageIds") || [];
         if (!favoriteImageIds.includes(imageId)) {
             favoriteImageIds.push(imageId);
             localStorage.setItem("favoriteImageIds", favoriteImageIds); 
-        }
+        }*/
     
     }
 }

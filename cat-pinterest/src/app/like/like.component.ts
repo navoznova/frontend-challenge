@@ -15,7 +15,13 @@ export class LikeComponent implements OnInit {
 	ngOnInit(): void {
 	}
 
+	/*
+	TODO change class after click on like button
 	getLikeClass(): string {
 		return this.isLiked ? 'liked' : '';
+	}*/
+
+	addToFavourites(){
+		return;
 	}
 }
