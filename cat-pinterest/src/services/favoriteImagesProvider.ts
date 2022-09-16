@@ -9,7 +9,7 @@ export class LocalStorageFavoriteImagesProvider {
         // throw new Error("Method not implemented.");
     }
 
-    add(imageId: string, imageUrl: string) {
+    addToFavourites(imageId: string, imageUrl: string) {
         localStorage.setItem(imageId, imageUrl);
 
         /*let favoriteImageIds = localStorage.getItem("favoriteImageIds") || [];

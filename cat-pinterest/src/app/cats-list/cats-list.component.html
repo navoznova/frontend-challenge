@@ -1,6 +1,6 @@
 <div class="row">
     <div *ngFor="let image of catsImages" class="container">
         <app-image [imageUrl]="image.url" [imageId]="image.id"></app-image>
-        <app-like [isLiked]="checkIsLiked(image.id)" [imageId]="image.id"></app-like>
+        <app-like [isLiked]="checkIsLiked(image.id)" [imageId]="image.id" [imageUrl]="image.url"></app-like>
     </div>
 </div>

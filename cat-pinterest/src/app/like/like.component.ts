@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Image } from '../../models/image.model';
+import { LocalStorageFavoriteImagesProvider } from 'src/services/favoriteImagesProvider';
 
 @Component({
 	selector: 'app-like',
@@ -8,6 +8,7 @@ import { Image } from '../../models/image.model';
 })
 export class LikeComponent implements OnInit {
 	@Input() imageId: string = '';
+	@Input() imageUrl: string = '';
 	@Input() isLiked: boolean = false;
 
 	constructor() { }
@@ -20,8 +21,4 @@ export class LikeComponent implements OnInit {
 	getLikeClass(): string {
 		return this.isLiked ? 'liked' : '';
 	}*/
-
-	addToFavourites(){
-		return;
-	}
 }
